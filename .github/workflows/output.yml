@@ -7,9 +7,10 @@ jobs:
   info:
     runs-on: ubuntu-latest
     steps:
-      - name: Get info
-        #run: echo "${{ toJSON(github) }}"
+      - name: Get Issue title and body
         run: | 
           echo "Issue title: ${{ github.event.issue.title }}"
           echo "Issue body: ${{ github.event.issue.body }}"
+      - name: Get all github context
+        run: echo "${{ toJSON(github) }}"
     
